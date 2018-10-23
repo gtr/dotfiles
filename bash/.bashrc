@@ -1,3 +1,12 @@
+# Gerardo Torres	https://gerardotorres.xyz/
+#     _               _              
+#    | |             | |             
+#    | |__   __ _ ___| |__  _ __ ___ 
+#    | '_ \ / _` / __| '_ \| '__/ __|
+#   _| |_) | (_| \__ \ | | | | | (__ 
+#  (_)_.__/ \__,_|___/_| |_|_|  \___|
+#
+
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -120,3 +129,7 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+# PS1
+export PS1="\[\e[92m\]\u\[\e[m\]->\[\e[93m\][\[\e[m\]\[\e[94m\]\W\[\e[m\]\[\e[93m\]]\[\e[m\]:\\$ "
+
