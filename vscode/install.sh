@@ -1,0 +1,12 @@
+code --install-extension ms-vscode.atom-keybindings
+code --install-extension coenraads.bracket-pair-colorizer
+code --install-extension ms-vscode.cpptools
+code --install-extension vscjava.vscode-java-debug
+code --install-extension ms-vscode.go
+code --install-extension james-yu.latex-workshop
+code --install-extension ritwickdey.liveserver
+code --install-extension goessner.mdmath
+code --install-extension ms-python.python
+code --install-extension emmanuelbeziat.vscode-great-icons
+code --install-extension dunstontc.viml
+code --install-extension ms-vscode.wordcount 
