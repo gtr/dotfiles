@@ -103,8 +103,10 @@ alias l='ls -CF'
 
 # git aliases
 alias ga='git add'
+alias gaa= 'git add *'
 alias gc='git commit'
 alias gs='git status'
+alias gp='git push'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
