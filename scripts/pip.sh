@@ -4,6 +4,7 @@ sudo pip install --upgrade pip
 
 sudo pip install --upgrade bonsai-ai
 sudo pip install --upgrade bonsai-cli
+sudo pip install --upgrade cheat 
 sudo pip install --upgrade Click
 sudo pip install --upgrade neovim
 sudo pip install --upgrade virtualenv

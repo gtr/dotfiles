@@ -18,7 +18,8 @@ sudo apt install -y \
 
 sudo apt intall -y \
     cheese \
-    gnome-tweak-tool 
+    gnome-tweak-tool \
+    mupdf mupdf-tools
 
 # drive -- 
 
