@@ -103,7 +103,7 @@ alias l='ls -CF'
 
 # git aliases
 alias ga='git add'
-alias gc='git commit'
+alias gc='git commit -m'
 alias gs='git status'
 alias gp='git push'
 
@@ -134,3 +134,6 @@ fi
 # PS1
 export PS1="\[\e[92m\]\u\[\e[m\]->\[\e[93m\][\[\e[m\]\[\e[94m\]\W\[\e[m\]\[\e[93m\]]\[\e[m\]:\\$ "
 
+# Install Ruby Gems to ~/gems
+export GEM_HOME=$HOME/gems
+export PATH=$HOME/gems/bin:$PATH

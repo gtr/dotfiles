@@ -1,10 +1,9 @@
 {
     "workbench.colorCustomizations": {
         "statusBar.background": "#537666",
-        // "statusBar.background": "#643d3d",
-        "editor.background": "#1b1b1b",
+        "editor.background": "#1c1c1c",
         "editor.lineHighlightBackground": "#333435",
-        "sideBar.background": "#1b1b1b",
+        "sideBar.background": "#1c1c1c",
         "editorLineNumber.foreground": "#6d786b",
         "list.activeSelectionBackground":"#404b4e",
         "tab.inactiveBackground": "#414141",
@@ -36,4 +35,6 @@
     "workbench.startupEditor": "welcomePage",
     "window.enableMenuBarMnemonics": false,
     "vim.useCtrlKeys": false,
+    "editor.lineNumbers": "relative",
+    "terminal.explorerKind": "external",
 }
