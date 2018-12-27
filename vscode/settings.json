@@ -37,4 +37,5 @@
     "vim.useCtrlKeys": false,
     "editor.lineNumbers": "relative",
     "terminal.explorerKind": "external",
+    "window.titleBarStyle": "native",
 }

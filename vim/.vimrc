@@ -41,7 +41,8 @@ filetype plugin indent on    " required
 
         set t_Co=256   
 
-        colorscheme monokai 
+        syntax on
+        colorscheme monokai
 
     " basic number and indentation settings
         set number			
