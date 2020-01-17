@@ -1,8 +1,4 @@
-" Gerardo Torres	https://gerardotorres.xyz/
-"   __   _(_)_ __ ___  _ __ ___ 
-"   \ \ / / | '_ ` _ \| '__/ __|
-"    \ V /| | | | | | | | | (__ 
-"   (_)_/ |_|_| |_| |_|_|  \___|
+" Gerardo Torres	https://gerardo.to/
 
 
 "----- user interface settings -----"
@@ -10,19 +6,7 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
-
-Plugin 'octol/vim-cpp-enhanced-highlight'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
@@ -42,7 +26,7 @@ filetype plugin indent on    " required
         set t_Co=256   
 
         syntax on
-        colorscheme monokai
+        colorscheme colt
 
     " basic number and indentation settings
         set number			

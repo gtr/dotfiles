@@ -7,12 +7,15 @@ sudo apt update
 # basics --
 
 sudo apt install -y \
+    cmake \
     curl \
     git \
     fish \
     neofetch \
     nnn \
     tree \
+    unzip \
+    wajig \
     wget 
 
 # some tools i might not need -- 
@@ -35,7 +38,7 @@ sudo apt-get install google-drive-ocamlfuse
 
 # development -- 
 
-read -p "Install extra tools? " -n 1 -r
+read -p "Install development tools? " -n 1 -r
 echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
@@ -46,8 +49,14 @@ then
         golang-go \
         nodejs \
         npm \
+        ocaml-interp \
         python3 \
         python3-pip \
         scala \
         texlive-full
 fi
+
+# bug fix for dash-to-dock
+
+sudo apt remove gnome-shell-extension-ubuntu-dock
+sudo apt install gnome-shell-extension-dashtodock
