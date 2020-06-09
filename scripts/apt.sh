@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+echo "scripts/apt.sh"
 echo "installing packages..."
 
 sudo apt update
@@ -17,6 +18,8 @@ sudo apt install -y \
     unzip \
     wajig \
     wget 
+
+sudo add-apt-repository ppa:hvr/ghc
 
 # some tools i might not need -- 
 
@@ -45,7 +48,9 @@ then
     sudo apt install -y \
         default-jre \
         default-jdk \
+        fp-compiler-3.0.4:amd64 \
         g++ \
+        ghc-8.0.2 \
         golang-go \
         nodejs \
         npm \
@@ -53,8 +58,12 @@ then
         python3 \
         python3-pip \
         scala \
+        scm \
         texlive-full
 fi
+
+# rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
 # bug fix for dash-to-dock
 

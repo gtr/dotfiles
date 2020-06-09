@@ -1,18 +1,34 @@
 {
     "workbench.colorCustomizations": {
-        "statusBar.background": "#537666",
-        "editor.background": "#1c1c1c",
+        "statusBar.background": "#7a5692",
+        "editor.background": "#030303",
         "editor.lineHighlightBackground": "#333435",
-        "sideBar.background": "#1c1c1c",
-        "editorLineNumber.foreground": "#6d786b",
-        "list.activeSelectionBackground":"#404b4e",
+        "sideBar.background": "#030303",
+        "editorLineNumber.foreground": "#f1efd8",
+        "list.activeSelectionBackground": "#404b4e",
         "tab.inactiveBackground": "#414141",
         "button.hoverBackground": "#414141",
         "input.background": "#414141",
         "list.inactiveSelectionBackground": "#414141",
+        "editor.foreground": "#ffffff",
     },
-    "workbench.iconTheme": "vscode-great-icons",
-    "workbench.colorTheme": "Monokai",
+    "editor.tokenColorCustomizations": {
+        // "numbers": "#2247EB",
+        "comments": "#c0c0c0a9",
+        "strings": "#c9c27e",
+        "keywords": "#8fb0f1",
+        // "functions": "#6cb693"
+        // "functions": "#c68ad4",
+        "textMateRules": [
+            {
+                "scope": "comment",
+                "settings": {
+                    "fontStyle": "normal"
+                }
+            }
+        ]
+    },
+    "workbench.colorTheme": "Super One Dark",
     "editor.minimap.enabled": false,
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
@@ -20,11 +36,11 @@
     "explorer.confirmDelete": false,
     "git.confirmSync": false,
     "git.autofetch": true,
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 0,
     "window.menuBarVisibility": "toggle",
     "latex-workshop.message.update.show": false,
     "latex-workshop.view.pdf.viewer": "browser",
-    "editor.fontSize": 15,
+    "editor.fontSize": 14,
     "telemetry.enableTelemetry": false,
     "explorer.confirmDragAndDrop": false,
     "python.linting.pylintEnabled": false,
@@ -34,8 +50,12 @@
     "liveServer.settings.donotShowInfoMsg": true,
     "workbench.startupEditor": "welcomePage",
     "window.enableMenuBarMnemonics": false,
-    "vim.useCtrlKeys": false,
-    "editor.lineNumbers": "relative",
     "terminal.explorerKind": "external",
-    "window.titleBarStyle": "native",
+    "files.associations": {
+        "*.pl": "prolog",
+        "*.ivy": "scheme"
+    },
+    "workbench.settings.useSplitJSON": true,
+    "go.lintTool": "staticcheck",
+    "workbench.iconTheme": "material-icon-theme",
 }

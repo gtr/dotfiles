@@ -1,6 +1,3 @@
-# Gerardo Torres	https://gerardo.to/
-#
-
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
@@ -106,6 +103,10 @@ alias testme='l'
 # nnn alias
 alias nnn='nnn -c 3'
 
+# more aliases
+alias ssd='df -h /'
+alias note='vim -c "NERDTree ~/src/notes"'
+
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -133,8 +134,24 @@ fi
 # PS1
 export PS1="\[\e[92m\]\u\[\e[m\]->\[\e[93m\][\[\e[m\]\[\e[94m\]\W\[\e[m\]\[\e[93m\]]\[\e[m\]:\\$ "
 
+
 # Install Ruby Gems to ~/gems
 export GEM_HOME=$HOME/gems
 export PATH=$HOME/gems/bin:$PATH
 
+# Bash completion.
+if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+        source /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+        source /etc/bash_completion
+    fi
+fi
 
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+export PATH="/home/gerardo/gems/bin:/home/gerardo/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/gerardo/.fzf/bin:/home/gerardo/.vimpkg/bin"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
