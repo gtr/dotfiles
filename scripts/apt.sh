@@ -12,12 +12,14 @@ sudo apt install -y \
     curl \
     git \
     fish \
+    nitrogen \
     neofetch \
     nnn \
     tree \
     unzip \
     wajig \
-    wget 
+    wget \
+    xrandr \
 
 sudo add-apt-repository ppa:hvr/ghc
 
