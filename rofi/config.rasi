@@ -1,0 +1,6 @@
+/** Basic config file **/
+
+configuration {
+  show-icons:         true;
+}
+@import "/usr/share/rofi/themes/DarkBlue.rasi"
