@@ -1,21 +1,40 @@
 " Gerardo Torres	https://gerardotorres.me/
 
+" ---- vim pluggins ---- "
+
+    " automatic installation
+    if empty(glob('~/.vim/autoload/plug.vim'))
+      silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+      autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+    endif
+
+    " Plugins will be downloaded under the specified directory.
+    call plug#begin('~/.vim/plugged')
+
+    " airline is cool and it looks pretty 
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+
+    " List ends her2e. Plugins become visible to Vim after this call.
+    call plug#end()
+
 "----- user interface settings -----"
 
-set nocompatible              " be iMproved, required
-filetype off                  " required
+    set nocompatible              " be iMproved, required
+    filetype off                  " required
 
 
-filetype plugin indent on    " required
+    filetype plugin indent on    " required
 
     " raninbow brackets
     let g:rainbow_active = 1
 
+    syntax on
     set t_Co=256   
 
-    hi Normal guibg=NONE ctermbg=NONE
-    syntax on
-
+    
+    " hi Normal guibg=NONE ctermbg=NONE
 
     " basic number and indentation settings
     set number			
@@ -27,10 +46,19 @@ filetype plugin indent on    " required
     hi cursorline cterm=none term=none
     highlight CursorLine guibg=#333435 ctermbg=239
 
+    " switch tabs with ctrl-left and ctrl-right
+    nnoremap <C-Left> :tabprevious<CR>
+    nnoremap <C-Right> :tabnext<CR>
+
 "----- key mapping -----"
-        
+
+    noremap <leader>s i<DEL><space><esc>
+
     " open .vimrc with \v key
-    noremap <leader>v :e $MYVIMRC<CR> 
+    noremap <leader>v :e! $MYVIMRC<CR> 
+
+    " open rza (colorsheme) with \c key
+    noremap <leader>c :e! ~/.vim/colors/rza.vim<CR> 
 
     " refresh .vimrc with \r key
     noremap <leader>r :source $MYVIMRC<CR>
@@ -44,6 +72,12 @@ filetype plugin indent on    " required
     " current time
     map <F2> :echo 'Current time is ' . strftime('%c')<CR>
 
+    " format the entire file with \f
+    nnoremap <leader>f <Esc>gg gqG<CR>
+
+    " enter a space in normal mode
+    nnoremap <space> i<space><esc>
+
 "----- file i/o -----"
     
     " file-specific
@@ -56,14 +90,9 @@ filetype plugin indent on    " required
         \| exe "normal! g'\"" | endif
     endif
 
-
-
     " #ivy #otw #soon #come
     autocmd BufNewFile,BufRead *.ivy set syntax=clojure
     autocmd FileType clojure set commentstring=#%s
-
-
-
 
 " ---- other ----"
 
@@ -75,11 +104,23 @@ filetype plugin indent on    " required
     set expandtab
     set shiftwidth=4
 
+    " text width
+    set tw=80
+
 " --- nerdtree --- "
 
-    nmap <C-f> :NERDTreeToggle<CR>
+    " nmap <C-f> :NERDTreeToggle<CR>
     map <C-h> <C-w>h
     map <C-l> <C-w>l
+
+    map <C-f> :call NERDTreeToggleAndRefresh()<CR>
+
+    function NERDTreeToggleAndRefresh()
+      :NERDTreeToggle
+      if g:NERDTree.IsOpen()
+        :NERDTreeRefreshRoot
+      endif
+    endfunction
 
 " --- remapping --- "
 
@@ -112,7 +153,5 @@ nmap <C-c> :.w! ~/.vimbuffer<CR>
 " paste from buffer
 map <C-p> :r ~/.vimbuffer<CR>
 
-set tw=80
+let g:airline_theme='violet'
 colorscheme rza
-colorscheme rza
-

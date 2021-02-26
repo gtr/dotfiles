@@ -28,7 +28,6 @@
             }
         ]
     },
-    "workbench.colorTheme": "Super One Dark",
     "editor.minimap.enabled": false,
     "atomKeymap.promptV3Features": true,
     "editor.multiCursorModifier": "ctrlCmd",
@@ -36,7 +35,6 @@
     "explorer.confirmDelete": false,
     "git.confirmSync": false,
     "git.autofetch": true,
-    "window.zoomLevel": 0,
     "window.menuBarVisibility": "toggle",
     "latex-workshop.message.update.show": false,
     "latex-workshop.view.pdf.viewer": "browser",
@@ -53,9 +51,22 @@
     "terminal.explorerKind": "external",
     "files.associations": {
         "*.pl": "prolog",
-        "*.ivy": "scheme"
+        "*.ivy": "python",
+        "*.lobo": "python"
     },
     "workbench.settings.useSplitJSON": true,
     "go.lintTool": "staticcheck",
     "workbench.iconTheme": "material-icon-theme",
+    "[python]": {
+        "editor.formatOnPaste": false
+    },
+    "python.showStartPage": false,
+    "go.formatTool": "goimports",
+    "workbench.colorTheme": "Super One Dark",
+    "clangd.path": "/home/gerardo/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/11.0.0/clangd_11.0.0/bin/clangd",
+    "C_Cpp.updateChannel": "Insiders",
+    "[c]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "C_Cpp.intelliSenseEngine": "Disabled"
 }
