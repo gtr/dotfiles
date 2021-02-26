@@ -1,0 +1,9 @@
+nitrogen --restore & #restore the background chosen with nitrogen
+lxpolkit & #polkit (password popup)
+clipit & #a tray clipboard manager
+compton & #the compositor
+tint2 & #the panel
+pamac-tray & #pamac software installer updates checker
+xautolock -time 15 -locker "~/lock.sh" -notify 30 -notifier "notify-send -u critical -t 10000 -- 'Locking screen in 30 seconds'" & #locks screen after 30 mins
+
+xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output eDP-1 --mode 1920x1080 --pos 1920x0 --rotate normal --output DP-2 --off
