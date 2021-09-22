@@ -43,7 +43,7 @@
   </placement>
   <theme>
     <name>Dracula-withoutBorder</name>
-    <titleLayout>NLIMC</titleLayout>
+    <titleLayout>LC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
       N: window icon
@@ -55,10 +55,10 @@
       D: omnipresent (on all desktops).
   -->
     <keepBorder>yes</keepBorder>
-    <animateIconify>yes</animateIconify>
+    <animateIconify>no</animateIconify>
     <font place="ActiveWindow">
-      <name>Ubuntu</name>
-      <size>12</size>
+      <name>San Francisco Display Semi-Bold</name>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -66,8 +66,8 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveWindow">
-      <name>Ubuntu</name>
-      <size>12</size>
+      <name>San Francisco Display Semi-Bold</name>
+      <size>11</size>
       <!-- font size in points -->
       <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
@@ -75,39 +75,39 @@
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuHeader">
-      <name>sans</name>
+      <name>San Francisco Text</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="MenuItem">
-      <name>sans</name>
+      <name>San Francisco Text Medium</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>normal</weight>
+      <weight>Normal</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="ActiveOnScreenDisplay">
-      <name>sans</name>
+      <name>San Francisco Text</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
     <font place="InactiveOnScreenDisplay">
-      <name>sans</name>
+      <name>San Francisco Text</name>
       <size>9</size>
       <!-- font size in points -->
-      <weight>bold</weight>
+      <weight>Bold</weight>
       <!-- 'bold' or 'normal' -->
-      <slant>normal</slant>
+      <slant>Normal</slant>
       <!-- 'italic' or 'normal' -->
     </font>
   </theme>
@@ -120,7 +120,7 @@
 
        use obconf if you want to change these without having to log out
        and back in -->
-    <number>3</number>
+    <number>4</number>
     <firstdesk>1</firstdesk>
     <names>
       <!-- set names up here if you want to, like this:
@@ -153,7 +153,7 @@
      Many programs reserve space automatically, but you can use this in other
      cases. -->
   <margins>
-    <top>1</top>
+    <top>0</top>
     <bottom>0</bottom>
     <left>0</left>
     <right>0</right>
@@ -206,13 +206,14 @@
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Left">
+    <!-- Shortcuts for sending window to other desktops -->
+    <keybind key="W-S-Prior">
       <action name="SendToDesktop">
         <to>left</to>
         <wrap>no</wrap>
       </action>
     </keybind>
-    <keybind key="S-A-Right">
+    <keybind key="W-S-Next">
       <action name="SendToDesktop">
         <to>right</to>
         <wrap>no</wrap>
@@ -356,6 +357,11 @@
         <command>~/.config/openbox/bin/ob_run.sh</command>
       </action>
     </keybind>
+    <keybind key="A-q">
+      <action name="Execute">
+        <command>~/.config/openbox/bin/ob_rofi.sh</command>
+      </action>
+    </keybind>
     <keybind key="W-1">
       <action name="Execute">
         <command>~/.config/openbox/bin/ob_home.sh</command>
@@ -391,11 +397,28 @@
         <command>~/.config/openbox/bin/ob_typora.sh</command>
       </action>
     </keybind>
+    <!-- Adjust brightness -->
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute">
+        <command>sudo brightnessctl set +5%</command>
+      </action>
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute">
+        <command>sudo brightnessctl set 5%-</command>
+      </action>
+    </keybind>
     <!-- Launch scrot when Print is pressed -->
     <keybind key="Print">
       <action name="Execute">
         <command>scrot</command>
       </action>
+    </keybind>
+    <!-- Shutdown System -->
+    <keybind key="A-S-F2">
+        <action name="Execute">
+            <command>shutdown -h 0</command>
+        </action>
     </keybind>
   </keyboard>
   <mouse>
@@ -470,7 +493,7 @@
         <action name="Move"/>
       </mousebind>
       <mousebind button="Left" action="DoubleClick">
-        <action name="ToggleMaximize"/>
+        <action name="ToggleMaximizeFull"/>
       </mousebind>
       <mousebind button="Up" action="Click">
         <action name="if">
