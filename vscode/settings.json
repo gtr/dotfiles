@@ -10,7 +10,7 @@
         "button.hoverBackground": "#414141",
         "input.background": "#414141",
         "list.inactiveSelectionBackground": "#414141",
-        "editor.foreground": "#ffffff",
+        "editor.foreground": "#ffffff"
     },
     "editor.tokenColorCustomizations": {
         // "numbers": "#2247EB",
@@ -38,7 +38,7 @@
     "window.menuBarVisibility": "toggle",
     "latex-workshop.message.update.show": false,
     "latex-workshop.view.pdf.viewer": "browser",
-    "editor.fontSize": 14,
+    "editor.fontSize": 16,
     "telemetry.enableTelemetry": false,
     "explorer.confirmDragAndDrop": false,
     "python.linting.pylintEnabled": false,
@@ -55,7 +55,7 @@
         "*.lobo": "python"
     },
     "workbench.settings.useSplitJSON": true,
-    "go.lintTool": "staticcheck",
+    "go.lintTool": "",
     "workbench.iconTheme": "material-icon-theme",
     "[python]": {
         "editor.formatOnPaste": false
@@ -68,5 +68,13 @@
     "[c]": {
         "editor.defaultFormatter": "ms-vscode.cpptools"
     },
-    "C_Cpp.intelliSenseEngine": "Disabled"
+    "C_Cpp.intelliSenseEngine": "Disabled",
+    "editor.fontFamily": "'Ubuntu Mono'",
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter-notebook",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
 }
