@@ -10,7 +10,7 @@
         "button.hoverBackground": "#414141",
         "input.background": "#414141",
         "list.inactiveSelectionBackground": "#414141",
-        "editor.foreground": "#ffffff"
+        "editor.foreground": "#ffffff",
     },
     "editor.tokenColorCustomizations": {
         // "numbers": "#2247EB",
@@ -51,18 +51,17 @@
     "terminal.explorerKind": "external",
     "files.associations": {
         "*.pl": "prolog",
-        "*.ivy": "python",
-        "*.lobo": "python"
+        "*.lobo": "python",
+        "*.ivy": "haskell"
     },
     "workbench.settings.useSplitJSON": true,
-    "go.lintTool": "",
+    "go.lintTool": "staticcheck",
     "workbench.iconTheme": "material-icon-theme",
     "[python]": {
         "editor.formatOnPaste": false
     },
     "python.showStartPage": false,
     "go.formatTool": "goimports",
-    "workbench.colorTheme": "Super One Dark",
     "clangd.path": "/home/gerardo/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/11.0.0/clangd_11.0.0/bin/clangd",
     "C_Cpp.updateChannel": "Insiders",
     "[c]": {
@@ -71,10 +70,9 @@
     "C_Cpp.intelliSenseEngine": "Disabled",
     "editor.fontFamily": "'Ubuntu Mono'",
     "go.toolsManagement.autoUpdate": true,
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter-notebook",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "bracketPairColorizer.depreciation-notice": false,
+    "workbench.colorTheme": "Omni",
 }
