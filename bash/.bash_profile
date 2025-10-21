@@ -1,12 +1,3 @@
-# Gerardo Torres Castro
-#
-# http://github.com/gtr
-# http://gerardotorres.me
-#
-# ~/.bash_profile (for my Mac OS setup).
-#
-
-# append to the history file, don't overwrite it
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
@@ -16,14 +7,6 @@ HISTFILESIZE=2000
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
-#shopt -s globstar
-
-#----------------------------------------
-# ALIASES
-#----------------------------------------
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -38,9 +21,12 @@ if [ -x /usr/bin/dircolors ]; then
 fi
 
 # some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias la='ls -a'
+alias l='ls -cf'
+
+ll() {
+    CLICOLOR_FORCE=1 ls -Glhp "$@" | awk '/^total/{next} /\/$/{dirs=dirs $0 ORS; next} {files=files $0 ORS} END{printf "%s%s", dirs, files}'
+}
 
 # git aliases
 alias ga='git add'
@@ -55,21 +41,10 @@ alias py='python3'
 # PS1
 export PS1="\[\033[38;5;169m\]\$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /')\[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]->\[$(tput sgr0)\]\[\033[38;5;11m\][\[$(tput sgr0)\]\[\033[38;5;68m\]\W\[$(tput sgr0)\]\[\033[38;5;11m\]]\[$(tput sgr0)\] \\$ \[$(tput sgr0)\]"
 
-# CockroachDB path (until I write a path-bookmarking script
-# https://github.com/gtr/tel).
-CRDB="/Users/gerardo/go/src/github.com/cockroachdb/cockroach/"
 
+alias vim='nvim'
 . "$HOME/.cargo/env"
-export PATH="/path/to/cloned_folder/homebrew/bin:$PATH"
-export PATH="/path/to/cloned_folder/homebrew/bin:$PATH"
 
-eval $(/opt/homebrew/bin/brew shellenv)
-export PATH="$(brew --prefix)/opt/make/libexec/gnubin:$PATH"
-
-alias crdb='Users/gerardo/go/src/github.com/cockroachdb/cockroach'
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/gerardo/google-cloud-sdk/path.bash.inc' ]; then . '/Users/gerardo/google-cloud-sdk/path.bash.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/gerardo/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/gerardo/google-cloud-sdk/completion.bash.inc'; fi
+export NVM_DIR="$HOME/.nvm"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
